@@ -74,15 +74,17 @@ def get_vector_store(text_chunks):
 def get_conversational_chain():
     """Load conversational chain for question answering."""
     prompt_template = """
-    Answer the question as detailed as possible from the provided context, 
-    make sure to provide all the details, if the answer is not in
-    provided context just say, "answer is not available in the context", 
-    don't provide the wrong answer\n\n
-    Context:\n {context}?\n
-    Question: \n{question}\n
+Answer the following question based strictly on the provided context. If the context is similar, use it to answer as accurately as possible. If the context is significantly different or irrelevant, respond with "Sorry, the question is out of context." Ensure your answer is detailed, accurate, and only includes information from the context provided.
 
-    Answer:
-    """
+Context:
+{context}
+
+Question:
+{question}
+
+Answer:
+"""
+
 
     model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.3)
     prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
