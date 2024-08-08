@@ -1,7 +1,4 @@
 # Chat with Documents
-
-![Chat with Documents](chat_with_documents.png)
-
 This is a Streamlit-based application that allows you to upload PDF, DOCX, or TXT documents and then ask questions about the content of those documents. The application uses the LangChain library and the Google Generative AI API to provide natural language processing and question-answering capabilities.
 
 ## Features
