@@ -7,3 +7,4 @@ chromadb==0.5.3
 faiss-cpu==1.7.2
 langchain_google_genai==1.0.7
 langchain_community==0.2.6
+docx2txt
